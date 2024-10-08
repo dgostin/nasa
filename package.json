@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "node api/server.js",
     "client": "npm run dev --prefix client",
     "client:build": "npm run build --prefix client",
-    "dev": "concurrently \"nodemon server/server.js\" \"npm run client\""
+    "dev": "concurrently \"nodemon api/server.js\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
