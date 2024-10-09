@@ -11,7 +11,7 @@ const ImageOverlay = ({ imageUrl, text, title }) => {
         {/* <div className="absolute bottom-0 left-0 w-full bg-black/40 flex flex-col items-center h-[120px]"> */}
         <div
           className={`transition-all duration-700 ${
-            textOpen ? "max-h-full h-2/3" : "h-[100px]"
+            textOpen ? "max-h-full h-full sm:h-2/3" : "h-[100px]"
             // textOpen ? "scale-50" : ""
           } absolute bottom-0 left-0 w-full bg-black/60 flex flex-col pb-4`}
         >
