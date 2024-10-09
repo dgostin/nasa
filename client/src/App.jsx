@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import ImageOverlay from "./ImageOverlay";
+import LoadingSpinner from "./LoadingSpinner";
 
 export default function App() {
   const [imageUrl, setImageUrl] = useState("");
@@ -24,7 +25,9 @@ export default function App() {
       {imageUrl ? (
         <ImageOverlay imageUrl={imageUrl} text={text} title={title} />
       ) : (
-        <div className="text-purple-500">Waiting</div>
+        <div className="min-h-screen pt-80">
+          <LoadingSpinner />
+        </div>
       )}
     </>
   );
