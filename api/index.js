@@ -1,15 +1,15 @@
 const express = require("express");
 const path = require("path");
 require("dotenv").config();
-// var fs = require("fs");
-// var files = fs.readdirSync(path.join(__dirname, "../client/dist"));
+var fs = require("fs");
+var files = fs.readdirSync(path.join(__dirname, "../client"));
 
 const app = express();
 
 // Serve static files from the React app
 // app.use(express.static(path.join(__dirname, "../client/dist")));
 
-// console.log(files);
+console.log(files);
 
 // API route (example)
 app.get("/api/hello", (req, res) => {
