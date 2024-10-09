@@ -13,7 +13,7 @@ console.log(files);
 
 // API route (example)
 app.get("/api/hello", (req, res) => {
-  res.json({ message: "../client/dist" });
+  res.json({ message: files });
 });
 
 // Catch-all route to serve the React app for any non-API request
