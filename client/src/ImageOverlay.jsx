@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 
-const ImageOverlay = ({ imageUrl, text, title }) => {
+const ImageOverlay = ({ data }) => {
   const [textOpen, setTextOpen] = useState(false);
 
   return (
     <div className="flex relative pt-[60px] justify-center mx-[30px]">
       <div className="relative inline-block border-2 border-green-700 rounded">
-        <img src={imageUrl} alt="Display" className="object-cover" />
+        <a href="">
+          <img
+            src={data.url}
+            alt="Display"
+            className="object-cover min-h-[800px]"
+          />
+        </a>
         {/* <div className="absolute bottom-0 left-0 w-full bg-black/40 flex flex-col items-center h-[120px]"> */}
         <div
           className={`transition-all duration-700 ${
@@ -22,13 +28,21 @@ const ImageOverlay = ({ imageUrl, text, title }) => {
             {textOpen ? <FaArrowDown size={14} /> : <FaArrowUp size={14} />}
           </button>
           <h2 className="text-white text-center ml-4 mb-2 text-md sm:text-3xl">
-            {title}
+            {data.title}
           </h2>
 
           {textOpen ? (
-            <p className="text-stone-400 ml-4 px-2 overflow-y-auto scrollbar-webkit text-xs sm:text-lg">
-              {text}
-            </p>
+            <>
+              <p className="text-stone-400 ml-4 mb-6 px-2 overflow-y-auto scrollbar-webkit text-xs sm:text-lg">
+                {data.explanation}
+              </p>
+              <div className="mx-8">
+                <h3 className="text-md sm:text-xl">{data.copyright}</h3>
+                <h4 className="text-gray-500 text-sm sm:text-lg">
+                  {data.date}
+                </h4>
+              </div>
+            </>
           ) : (
             ""
           )}
