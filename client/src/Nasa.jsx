@@ -19,7 +19,7 @@ const Nasa = ({ data, selectedDate, setSelectedDate }) => {
             <img
               src={data.url}
               alt="Display"
-              className="object-cover min-h-[800px]"
+              className="object-contain min-h-[800px]"
             />
           ) : (
             <iframe
