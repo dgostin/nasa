@@ -18,7 +18,7 @@ app.get("/api/hello", (req, res) => {
 
 app.get("/api/data", async (req, res) => {
   try {
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}&date=2019-08-09`;
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}`;
     // console.log(url);
     const response = await axios.get(url);
     const data = response.data;

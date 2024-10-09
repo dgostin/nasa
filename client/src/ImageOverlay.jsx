@@ -21,7 +21,9 @@ const ImageOverlay = ({ imageUrl, text, title }) => {
           >
             {textOpen ? <FaArrowDown size={14} /> : <FaArrowUp size={14} />}
           </button>
-          <h2 className="text-white text-center ml-4 mb-2 text-3xl">{title}</h2>
+          <h2 className="text-white text-center ml-4 mb-2 text-md sm:text-3xl">
+            {title}
+          </h2>
 
           {textOpen ? (
             <p className="text-stone-400 ml-4 px-2 overflow-y-auto scrollbar-webkit text-xs sm:text-lg">
