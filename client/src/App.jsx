@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Nasa from "./Nasa";
 import LoadingSpinner from "./LoadingSpinner";
+import { getDate } from "./utils";
 
 export default function App() {
   const [data, setData] = useState({});
@@ -15,15 +16,6 @@ export default function App() {
         setData(data);
       });
   }, [selectedDate]);
-
-  function getDate() {
-    const currentDate = new Date();
-    const year = currentDate.getFullYear();
-    const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Add leading zero if needed
-    const day = String(currentDate.getDate()).padStart(2, "0"); // Add leading zero if needed
-
-    return `${year}-${month}-${day}`;
-  }
 
   return (
     <>
