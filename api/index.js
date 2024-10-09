@@ -7,7 +7,7 @@ const app = express();
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, "../client/dist")));
 
-console.log(path.join(__dirname, "../client/dist"));
+console.log("Alive");
 
 // API route (example)
 app.get("/api/hello", (req, res) => {
