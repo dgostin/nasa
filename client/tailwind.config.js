@@ -13,17 +13,18 @@ export default {
       const newUtils = {
         ".scrollbar-thin": {
           scrollbarWidth: "thin",
-          scrollbarColor: "rgb(31 29 29) white",
+          // scrollbarColor: "rgb(31 29 29) white",
+          scrollbarColor: "rgb(31 29 29) blue",
         },
         ".scrollbar-webkit": {
           "&::-webkit-scrollbar": {
-            width: "8px",
+            width: "14px",
           },
           "&::-webkit-scrollbar-track": {
-            background: "white",
+            background: "black",
           },
           "&::-webkit-scrollbar-thumb": {
-            background: "rgb(31 41 55)",
+            background: "green",
             borderRadius: "20px",
             border: "1px solid white",
           },
