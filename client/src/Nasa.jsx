@@ -37,7 +37,7 @@ const Nasa = ({ data, selectedDate, setSelectedDate }) => {
             className={`transition-all duration-700 ${
               textOpen ? "max-h-full h-full sm:h-2/3" : "h-[100px]"
               // textOpen ? "scale-50" : ""
-            } absolute bottom-0 left-0 w-full bg-black/60 flex flex-col pb-4`}
+            } absolute bottom-0 left-0 w-full bg-black/70 flex flex-col pb-4`}
           >
             <button
               className="mx-auto mb-2 text-white text-center my-1 bg-slate-700 hover:bg-slate-500 p-2 rounded transition-all duration-700"
