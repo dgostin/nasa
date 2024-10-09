@@ -7,7 +7,7 @@ require("dotenv").config();
 const app = express();
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, "../client/dist")));
+// app.use(express.static(path.join(__dirname, "../client/dist")));
 
 // console.log(files);
 
@@ -17,9 +17,9 @@ app.get("/api/hello", (req, res) => {
 });
 
 // Catch-all route to serve the React app for any non-API request
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
+// });
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
