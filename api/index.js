@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 
 // API route (example)
 app.get("/api/hello", (req, res) => {
-  res.json({ message: "Hello from the backend!" });
+  res.json({ message: "Hello from the backendy!" });
 });
 
 // Catch-all route to serve the React app for any non-API request
