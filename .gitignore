@@ -1,5 +1,6 @@
 # Node.js modules
 /node_modules
+requests.http
 
 # Build folder (for React app)
 /client/build

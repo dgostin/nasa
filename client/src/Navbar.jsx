@@ -8,9 +8,9 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex items-center justify-center h-16">
           <a href="/" className="text-2xl font-bold">
-            Auto Repair Shop
+            NASA Astronomy Picture of the Day
           </a>
         </div>
       </div>
