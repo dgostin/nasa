@@ -18,8 +18,10 @@ app.get("/api/hello", (req, res) => {
 
 app.get("/api/data", async (req, res) => {
   try {
-    const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}`;
-    // console.log(url);
+    const date = req.query.date;
+    // console.log(date);
+    const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}&date=${date}`;
+    console.log(url);
     const response = await axios.get(url);
     const data = response.data;
 

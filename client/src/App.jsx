@@ -1,32 +1,39 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
-import ImageOverlay from "./ImageOverlay";
+import Nasa from "./Nasa";
 import LoadingSpinner from "./LoadingSpinner";
 
 export default function App() {
-  // const [imageUrl, setImageUrl] = useState("");
-  // const [text, setText] = useState("");
-  // const [title, setTitle] = useState("");
-
   const [data, setData] = useState({});
+  const [selectedDate, setSelectedDate] = useState(getDate());
 
   useEffect(() => {
-    fetch("/api/data")
+    fetch(`/api/data?date=${selectedDate}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        // setImageUrl(data.url);
-        // setText(data.explanation);
-        // setTitle(data.title);
         setData(data);
       });
-  }, []);
+  }, [selectedDate]);
+
+  function getDate() {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Add leading zero if needed
+    const day = String(currentDate.getDate()).padStart(2, "0"); // Add leading zero if needed
+
+    return `${year}-${month}-${day}`;
+  }
 
   return (
     <>
       <Navbar />
       {data.title ? (
-        <ImageOverlay data={data} />
+        <Nasa
+          data={data}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+        />
       ) : (
         <div className="min-h-screen pt-80">
           <LoadingSpinner />
