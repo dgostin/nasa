@@ -1,8 +1,8 @@
 const express = require("express");
 const path = require("path");
 require("dotenv").config();
-var fs = require("fs");
-var files = fs.readdirSync(path.join(__dirname, "../client/dist"));
+// var fs = require("fs");
+// var files = fs.readdirSync(path.join(__dirname, "../client/dist"));
 
 const app = express();
 
