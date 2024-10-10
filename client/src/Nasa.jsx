@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import DatePicker from "./DatePicker";
+import DownloadImageButton from "./DownloadImageButton";
 
 const Nasa = ({ data, selectedDate, setSelectedDate }) => {
   const [textOpen, setTextOpen] = useState(false);
@@ -51,14 +52,17 @@ const Nasa = ({ data, selectedDate, setSelectedDate }) => {
 
             {textOpen ? (
               <>
-                <p className="text-stone-400 ml-4 mb-6 px-2 overflow-y-auto scrollbar-webkit text-xs sm:text-lg">
+                <p className="text-stone-400 ml-4 mb-8 px-2 overflow-y-auto scrollbar-webkit text-xs sm:text-lg">
                   {data.explanation}
                 </p>
-                <div className="mx-8">
-                  <h3 className="text-md sm:text-xl">{data.copyright}</h3>
-                  <h4 className="text-gray-500 text-sm sm:text-lg">
-                    {data.date}
-                  </h4>
+                <div className="flex mx-8 justify-evenly items-center">
+                  <div>
+                    <h3 className="text-md sm:text-xl">{data.copyright}</h3>
+                    <h4 className="text-gray-500 text-sm sm:text-lg">
+                      {data.date}
+                    </h4>
+                  </div>
+                  <DownloadImageButton date={data.date} />
                 </div>
               </>
             ) : (
