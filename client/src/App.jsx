@@ -9,6 +9,7 @@ export default function App() {
   const [selectedDate, setSelectedDate] = useState(getDate());
 
   useEffect(() => {
+    setData({ title: "" }); //Forces Loading Spinner
     fetch(`/api/data?date=${selectedDate}`)
       .then((response) => response.json())
       .then((data) => {

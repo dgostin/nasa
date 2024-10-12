@@ -1,21 +1,25 @@
 const express = require("express");
 const path = require("path");
 const axios = require("axios"); // Import axios
-
+const rateLimit = require("express-rate-limit");
 require("dotenv").config();
-// var fs = require("fs");
-// var files = fs.readdirSync(path.join(__dirname, "../client"));
 
 const app = express();
 
+// Apply the rate limit to all requests
+app.use(
+  rateLimit({
+    windowMs: 60 * 1000, // 60 seconds
+    max: 15, // Limit each IP to 15 requests per `window`
+    message:
+      "Too many requests from this IP, please try again after 60 seconds",
+  })
+);
+
 // Serve static files from the React app
-// app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "../client/dist")));
 
-// API route (example)
-app.get("/api/hello", (req, res) => {
-  res.json({ message: "Go away." });
-});
-
+// API route
 app.get("/api/data", async (req, res) => {
   const date = req.query.date;
   const hdimage = req.query.hdimage;
