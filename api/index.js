@@ -18,7 +18,7 @@ app.use(
 
 // Serve static files from the React app
 // app.use(express.static(path.join(__dirname, "../client/dist")));
-app.use(express.static(path.join(__dirname, "../public")));
+// app.use(express.static(path.join(__dirname, "../public")));
 
 // API route
 app.get("/api/data", async (req, res) => {
