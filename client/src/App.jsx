@@ -10,7 +10,7 @@ export default function App() {
 
   useEffect(() => {
     setData({ title: "" }); //Forces Loading Spinner
-    fetch(`/api/data?date=${selectedDate}`)
+    fetch(`/server/data?date=${selectedDate}`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
