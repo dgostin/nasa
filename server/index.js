@@ -21,7 +21,7 @@ app.use(
 app.use(express.static(path.join(__dirname, "../public")));
 
 // API route
-app.get("/server/data", async (req, res) => {
+app.get("/api/data", async (req, res) => {
   const date = req.query.date;
   const hdimage = req.query.hdimage;
   // console.log(date);

@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "install": "cd client && npm i",
-    "start": "node server/index.js",
+    "start": "node api/index.js",
     "client": "npm run dev --prefix client",
     "build": "npm run build --prefix client",
-    "dev": "concurrently \"nodemon server/index.js\" \"npm run client\""
+    "dev": "concurrently \"nodemon api/index.js\" \"npm run client\""
   },
   "keywords": [],
   "author": "",
