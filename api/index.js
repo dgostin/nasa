@@ -26,13 +26,13 @@ app.get("/api/data", async (req, res) => {
   const hdimage = req.query.hdimage;
   // console.log(date);
   const url = `https://api.nasa.gov/planetary/apod?api_key=${process.env.API_KEY}&date=${date}`;
-  console.log(url);
+  // console.log(url);
   try {
     const response = await axios.get(url);
     const data = response.data;
 
     if (hdimage) {
-      console.log(data.hdurl);
+      // console.log(data.hdurl);
       const response1 = await axios.get(data.hdurl, { responseType: "stream" });
       res.setHeader(
         "Content-Disposition",

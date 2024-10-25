@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Nasa from "./Nasa";
 import LoadingSpinner from "./LoadingSpinner";
 import { getDate } from "./utils";
+import Footer from "./Footer";
 
 export default function App() {
   const [data, setData] = useState({});
@@ -32,6 +33,7 @@ export default function App() {
           <LoadingSpinner />
         </div>
       )}
+      <Footer />
     </>
   );
 }
