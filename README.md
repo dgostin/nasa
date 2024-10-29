@@ -1,6 +1,6 @@
 # NASA Astronomy Picture of the Day
 
-Astronomy Picture of the Day is a full stack web application that retrieves images from the NASA APOD API (https://api.nasa.gov/). The frontend is built with Vite and React, while the backend is a Node.js/Express server.
+NASA Astronomy Picture of the Day is a full stack web application that retrieves images from the NASA APOD API (https://api.nasa.gov/). The frontend is built with Vite and React, while the backend is a Node.js/Express server.
 
 ## Table of Contents
 
